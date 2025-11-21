@@ -15,7 +15,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="UserData")
+@Table(name="USERDATA")
 public class UserEntity implements Serializable, GrantedAuthority {
 
     @Id

@@ -43,8 +43,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception{
         // We don't need CSRF for this example
-//        httpSecurity.headers().frameOptions().disable();
-        httpSecurity.authorizeRequests().antMatchers("/h2-console").permitAll();
+        httpSecurity.headers().frameOptions().disable();
+        httpSecurity.authorizeRequests().antMatchers("/h2-console/*").permitAll();
         httpSecurity.csrf().disable().authorizeRequests().antMatchers("/authenticate").permitAll()
                 .anyRequest().authenticated().and()
                 .exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint).and().sessionManagement()
