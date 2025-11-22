@@ -29,18 +29,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private JwtRequestFilter jwtRequestFilter;
 
     @Bean
-    public PasswordEncoder passwordEncoder(){
+    public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
     @Bean
     @Override
-    public AuthenticationManager authenticationManager() throws Exception{
+    public AuthenticationManager authenticationManager() throws Exception {
         return super.authenticationManager();
     }
 
     @Override
-    protected void configure(HttpSecurity httpSecurity) throws Exception{
+    protected void configure(HttpSecurity httpSecurity) throws Exception {
         // We don't need CSRF for this example
         httpSecurity.headers().frameOptions().disable();
         httpSecurity.authorizeRequests().antMatchers("/h2-console/*").permitAll();

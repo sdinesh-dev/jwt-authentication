@@ -15,7 +15,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="USERDATA")
+@Table(name = "USERDATA")
 public class UserDataEntity implements Serializable, GrantedAuthority {
 
     @Id
@@ -24,6 +24,7 @@ public class UserDataEntity implements Serializable, GrantedAuthority {
     private String username;
     private String password;
     private String role;
+
     @Override
     public String getAuthority() {
         return this.role;

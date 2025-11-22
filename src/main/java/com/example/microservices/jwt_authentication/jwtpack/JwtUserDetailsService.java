@@ -1,7 +1,7 @@
 package com.example.microservices.jwt_authentication.jwtpack;
 
-import com.example.microservices.jwt_authentication.dao.UserDataRepository;
 import com.example.microservices.jwt_authentication.dao.UserDataEntity;
+import com.example.microservices.jwt_authentication.dao.UserDataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
