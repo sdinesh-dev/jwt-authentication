@@ -1,6 +1,6 @@
 package com.example.microservices.jwt_authentication.controllers;
 
-import com.example.microservices.jwt_authentication.dao.UserEntity;
+import com.example.microservices.jwt_authentication.dao.UserDataEntity;
 import com.example.microservices.jwt_authentication.jwtpack.JwtResponse;
 import com.example.microservices.jwt_authentication.jwtpack.JwtTokenUtil;
 import com.example.microservices.jwt_authentication.jwtpack.JwtUserDetailsService;
@@ -28,7 +28,7 @@ public class JwtAuthenticationController {
     private JwtUserDetailsService jwtUserDetailsService;
 
     @PostMapping(value = "/authenticate")
-    public ResponseEntity<?> createAuthenticationToken(@RequestBody UserEntity authenticationRequest) throws Exception{
+    public ResponseEntity<?> createAuthenticationToken(@RequestBody UserDataEntity authenticationRequest) throws Exception{
         authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
         final UserDetails userDetails = jwtUserDetailsService.loadUserByUsername(authenticationRequest.getUsername());
         final String token = jwtTokenUtil.generateToken(userDetails);

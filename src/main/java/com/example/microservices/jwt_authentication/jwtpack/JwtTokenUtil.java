@@ -1,7 +1,6 @@
 package com.example.microservices.jwt_authentication.jwtpack;
 
 import com.example.microservices.jwt_authentication.dao.UserDataRepository;
-import com.example.microservices.jwt_authentication.dao.UserEntity;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -26,7 +25,7 @@ public class JwtTokenUtil implements Serializable {
     @Autowired
     private UserDataRepository userDataRepository;
 
-    @Value("$jwt.secret")
+    @Value("${jwt.secret}")
     private String secret;
 
     //retrieve username from jwt token

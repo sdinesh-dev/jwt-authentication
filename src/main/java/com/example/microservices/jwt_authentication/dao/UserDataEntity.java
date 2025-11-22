@@ -16,7 +16,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Entity
 @Table(name="USERDATA")
-public class UserEntity implements Serializable, GrantedAuthority {
+public class UserDataEntity implements Serializable, GrantedAuthority {
 
     @Id
     @GeneratedValue
