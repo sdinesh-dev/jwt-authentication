@@ -1,5 +1,6 @@
 package com.example.microservices.jwt_authentication.jwtpack;
 
+import com.example.microservices.jwt_authentication.dao.UserDataEntity;
 import com.example.microservices.jwt_authentication.dao.UserDataRepository;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -57,10 +58,10 @@ public class JwtTokenUtil implements Serializable {
         Map<String, Object> claims = new HashMap<>();
         Set<String> userRoles = new HashSet<>();
         //to use roles uncomment below code
-        /*UserEntity role = userDataRepository.findByUsername(userDetails.getUsername());
+        UserDataEntity role = userDataRepository.findByUsername(userDetails.getUsername());
         userRoles.add(role.getRole());
         Object[] roles = role.getRole().split(",");
-        claims.put("Roles",roles);*/
+        claims.put("Roles",roles);
         return doGenerateToken(claims, userDetails.getUsername());
     }
 
